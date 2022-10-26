@@ -1,7 +1,7 @@
 [package]
 name = "ulferno/objecthighlighter"
 description = "Port of rbx-ObjectHighlighter by Imaginaerume for use in Check it Containment"
-version = "1.0.1"
+version = "1.0.2"
 license = "MIT"
 authors = []
 realm = "shared"

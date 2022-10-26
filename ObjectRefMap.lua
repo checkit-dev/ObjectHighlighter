@@ -9,6 +9,25 @@ function ObjectRefMap.fromModel(model)
 	local clonedPrimaryPart
 	local dataModel = {}
 	local map = {}
+	if not model:IsA("Model") then
+		local clone = createInstanceCopy(model)
+		if clone then
+			clone.Parent = newModel
+
+			if clone:IsA("BasePart") then
+				map[model] = clone
+				if not clonedPrimaryPart then
+					clonedPrimaryPart = clone
+				end
+			elseif model:IsA("Humanoid") then
+				if alreadyHasAHumanoid then
+					clone:Destroy()
+				else
+					alreadyHasAHumanoid = true
+				end
+			end
+		end
+	end
 	for _, object in ipairs(model:GetDescendants()) do
 		local clone = createInstanceCopy(object)
 		if clone then

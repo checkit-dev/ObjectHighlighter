@@ -9,7 +9,7 @@ local Highlight = {}
 function Highlight.new(props)
 	assert(type(props) == "table", "Highlight.new expects a table of props.")
 	assert(props.target, "Highlight requires a target to be set!")
-	--	assert(props.target:IsA("Model"), "Highlight requires target to be a Model!")
+	--assert(props.target:IsA("Model"), "Highlight requires target to be a Model!")
 
 	local state = {
 		target = props.target,
@@ -21,7 +21,7 @@ function Highlight.new(props)
 end
 
 function Highlight.fromTarget(target)
-	--	assert(target and target:IsA("Model"), "Highlight.fromTarget requires a Model target to be set!")
+	--assert(target and target:IsA("Model"), "Highlight.fromTarget requires a Model target to be set!")
 
 	return Highlight.new({
 		target = target,
